@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# RANT 
 
-## Available Scripts
+### *A app that lets you review restaurants on more then just the overall experience.*
 
-In the project directory, you can run:
+We all know that feeling of being hungry and not knowing where to go so we google/yelp places to eat. You're feeling adventurous so you choose a 3 star place...**YES A 3 STAR ESTABLISHMENT**. Why though? Why is this place middle of the pack? Sure you can go through the various reviews and read a 1 star review and have read someone *rant* about how their one off experience absolutely suuuuucked cause the wait staff was rude to them. Okay you know that the wait staff is rude but what about the food? Now you have to source another review. All this time you're getting more and more hungry. 
 
-### `npm start`
+That is where **RANT** comes to the rescue! With RANT you get more then just one overall review.  Here we understand that you people are different...so we make it so that you can see different ratings for different parts of the whole restaurant experience. Those parts being: Overall, wait time, wait staff, instagram worthiness, taste,bathroom cleanliness. All of that upfront. If you're in the mood for American food, your're not just in the mood for American food.  You're **really** in the mood for good american food with a reasonalbe wait staff and your day wasn't the greatest so you're looking for a 5 star wait time.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Technologies Used:
+- HTML/CSS/JavaScript
+- Bootstrap
+- MERN Stack
+  - MongoDB
+  - Express
+  - ReactJS
+  - NodeJS
+- Yelp/Zomato API
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+![Imgur](https://i.imgur.com/XqAjVLD.png)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Imgur](https://i.imgur.com/Kt0zhxD.png)
+![Imgur](https://i.imgur.com/tp1laKh.png)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### See my trello board [**here**](https://trello.com/b/kc8TpBdV)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Deployed on heroku [**here**](google.com)
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Paltry Persistent Predicaments!!!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Heres one
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Fun Future Feature!!!
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Is this possible?
