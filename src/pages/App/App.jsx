@@ -31,13 +31,20 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path='/' render={() => 
-              <MainPage />
+              <MainPage 
+                user={this.state.user}
+              />
             } />
-            <Route path='/signup' render={() => 
-              <SignupPage />
+            <Route path='/signup' render={({history}) => 
+              <SignupPage 
+                  history={history}
+                handleSignupOrLogin={this.handleSignupOrLogin}
+              />
             } />
-            <Route path='/login' render={() => 
-              <LoginPage />
+            <Route path='/login' render={({history}) => 
+              <LoginPage 
+                  history={history}
+              />
             } />
 
           </Switch>
