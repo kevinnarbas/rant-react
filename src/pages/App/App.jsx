@@ -1,13 +1,51 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Route, Switch, redirect} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import NavBar from '../../components/NavBar/NavBar'
+import userService from '../../utils/userService'
+import LoginPage from '../LoginPage/LoginPage'
+import SignupPage from '../SignupPage/SignupPage'
+import MainPage from '../MainPage/MainPage'
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello World</h1>
-      <img src="https://miro.medium.com/max/762/1*KVSXYX5Owz7-_5Rm_jHEKQ.jpeg" alt="REACT MEME"/>
-    </div>
-  );
+class App extends Component {
+  state = {
+    user: userService.getUser()
+  }
+  
+  handleLogout = () => {
+    userService.logout();
+    this.setState({user: null});
+  }
+
+  handleSignupOrLogin = () => {
+    this.setState({user: userService.getUser()});
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header>
+          <NavBar />
+        </header>
+        <div>
+          <Switch>
+            <Route exact path='/' render={() => 
+              <MainPage />
+            } />
+            <Route path='/signup' render={() => 
+              <SignupPage />
+            } />
+            <Route path='/login' render={() => 
+              <LoginPage />
+            } />
+
+          </Switch>
+        </div>
+        <footer>Rant made by Kevinn Arbas with ♥︎ Remember to ♺ always</footer>
+      </div>
+    );
+  }
 }
 
 export default App;
