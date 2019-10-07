@@ -8,6 +8,7 @@ import userService from '../../utils/userService'
 import LoginPage from '../LoginPage/LoginPage'
 import SignupPage from '../SignupPage/SignupPage'
 import MainPage from '../MainPage/MainPage'
+import BusinessDetailPage from '../BusinessDetailPage/BusinessDetailPage'
 
 class App extends Component {
   state = {
@@ -51,9 +52,12 @@ class App extends Component {
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             } />
+            <Route path="/business/:id" render={(props) => 
+              <BusinessDetailPage {...props} />
+            } />
           </Switch>
         </Container>
-        <footer className="App-footer">Rant made by Kevinn Arbas with ♥︎ Remember to ♺ always</footer>
+        <footer className="App-footer">Rant made by Kevinn Arbas with ♥︎ Remember to ♻︎ always</footer>
       </div>
     );
   }
