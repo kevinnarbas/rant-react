@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Route, Switch, redirect} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import Container from 'react-bootstrap/Container'
 import NavBar from '../../components/NavBar/NavBar'
 import userService from '../../utils/userService'
 import LoginPage from '../LoginPage/LoginPage'
@@ -26,9 +27,12 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <NavBar />
+          <NavBar 
+            user={this.state.user}
+            handleLogout={this.handleLogout}
+          />
         </header>
-        <div>
+        <Container>
           <Switch>
             <Route exact path='/' render={() => 
               <MainPage 
@@ -37,19 +41,19 @@ class App extends Component {
             } />
             <Route path='/signup' render={({history}) => 
               <SignupPage 
-                  history={history}
+                history={history}
+                handleSignupOrLogin={this.handleSignupOrLogin}
+                />
+              } />
+            <Route path='/login' render={({history}) => 
+              <LoginPage 
+                history={history}
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             } />
-            <Route path='/login' render={({history}) => 
-              <LoginPage 
-                  history={history}
-              />
-            } />
-
           </Switch>
-        </div>
-        <footer>Rant made by Kevinn Arbas with ♥︎ Remember to ♺ always</footer>
+        </Container>
+        <footer className="App-footer">Rant made by Kevinn Arbas with ♥︎ Remember to ♺ always</footer>
       </div>
     );
   }

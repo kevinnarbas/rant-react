@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  position: relative;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -19,4 +21,10 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.App-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
