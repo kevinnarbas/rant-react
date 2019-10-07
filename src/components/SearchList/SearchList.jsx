@@ -4,7 +4,8 @@ import {Route, Switch, Link} from 'react-router-dom'
 
 class SearchList extends React.Component {
   state = {
-    businesses: []
+    businesses: [],
+    search: '',
   }
   
   componentDidMount() {
@@ -15,6 +16,8 @@ class SearchList extends React.Component {
     params: {
       latitude: 37.774929, 
       longitude: -122.419418,
+      limit: 50,
+      term: `${this.state.search}`
     }
   })
   .then(res => {
@@ -24,27 +27,43 @@ class SearchList extends React.Component {
   .catch(err => {console.log('Error')})
   }
 
-  
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.componentDidMount()
+  }
+
 
   render() {
     return (
-      <Switch>
-        <Route exact path="/" render={() => 
-          <div>
-            {this.state.businesses.map((business, id) => 
-              <Link
-                to={{
-                  pathname:`business/${id}`,
-                  state: {businesses: business}
-                }}
-                key={id}
-              >
-                <div key={id}>{business.name}</div>
-              </Link>
-              )}
-          </div>
-        } />
-      </Switch>
+      <>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" value={this.state.search} name="search" onChange={this.handleChange}/>
+          <button type="submit">Search</button>
+        </form>
+        <Switch>
+          <Route exact path="/" render={() => 
+            <div>
+              {this.state.businesses.map((business, id) => 
+                <Link
+                  to={{
+                    pathname:`business/${id}`,
+                    state: {businesses: business}
+                  }}
+                  key={id}
+                >
+                  <div key={id}>{business.name}</div>
+                </Link>
+                )}
+            </div>
+          } />
+        </Switch>
+      </>
     )
   }
 }

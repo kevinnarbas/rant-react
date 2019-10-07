@@ -12,6 +12,16 @@ const BusinessDetailPage = (props) => {
     <>
       <h1>{name}</h1>
       <Container>
+      <Row>
+          <Col xs={4}><h5>Wait time:</h5> Overall Rating</Col>
+          <Col xs={4}><h5>Wait Service:</h5> Overall Rating</Col>
+          <Col xs={4}><h5>Food Taste:</h5> Overall Rating</Col>
+        </Row>
+        <Row>
+          <Col xs={4}><h5>Instagraminess:</h5> Overall Rating</Col>
+          <Col xs={4}><h5>Cleanliness:</h5> Overall Rating</Col>
+          <Col xs={4}><h5>Bathrooms:</h5> Overall Rating</Col>
+        </Row>
         <Row>
           <Col xs={6}>
             <img className="Detail-img" src={image_url} alt="restauraunt-type"/>
@@ -25,9 +35,10 @@ const BusinessDetailPage = (props) => {
             <Link to='/'>
               <div>BACK</div>
             </Link>
-            {/* <form onSubmit={handleSubmit}>
-            </form> */}
           </Col>
+        </Row>
+        <Row>
+          <Col>NO RANTS YET...rant about it!</Col>
         </Row>
       </Container>
     </>

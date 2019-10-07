@@ -9,6 +9,7 @@ import LoginPage from '../LoginPage/LoginPage'
 import SignupPage from '../SignupPage/SignupPage'
 import MainPage from '../MainPage/MainPage'
 import BusinessDetailPage from '../BusinessDetailPage/BusinessDetailPage'
+import AboutPage from '../AboutPage/AboutPage'
 
 class App extends Component {
   state = {
@@ -54,6 +55,9 @@ class App extends Component {
             } />
             <Route path="/business/:id" render={(props) => 
               <BusinessDetailPage {...props} />
+            } />
+            <Route path="/about" render={() =>
+              <AboutPage />
             } />
           </Switch>
         </Container>

@@ -6,7 +6,7 @@ const reviewSchema = new Schema({
   wait_time: {type: Number},
   waitService: {type: Number},
   foodTaste: {type: Number},
-  instWorth: {type: Number},
+  instaWorth: {type: Number},
   cleanliness: {type: Number},
   bathroom: {type: Number},
 }, {timestamps: true})
