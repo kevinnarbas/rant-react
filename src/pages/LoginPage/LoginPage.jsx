@@ -11,7 +11,6 @@ class LoginPage extends Component {
   };
 
   handleChange = (e) => {
-    // TODO: implement in an elegant way
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -22,11 +21,9 @@ class LoginPage extends Component {
     try {
       await userService.login(this.state);
       this.props.handleSignupOrLogin();
-      // Successfully signed up - show GamePage
       this.props.history.push('/');
     } catch (err) {
-      // use a modal or toast in your apps instead of toats
-      alert('Invalid Creds!');
+      alert('USE A TOAST!');
     }
   }
 

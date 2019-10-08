@@ -16,7 +16,7 @@ class SearchList extends React.Component {
     params: {
       latitude: 37.774929, 
       longitude: -122.419418,
-      limit: 50,
+      limit: 25,
       term: `${this.state.search}`
     }
   })

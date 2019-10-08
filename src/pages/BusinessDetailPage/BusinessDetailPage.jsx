@@ -1,7 +1,6 @@
 import React from 'react'
 import './BusinessDetailPage.css'
-import {Link} from 'react-router-dom'
-import {Container, Row, Col, Button, Accordion, Card} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 import DetailDetails from '../../components/DetailDetails/DetailDetails'
 
 const BusinessDetailPage = (props) => {

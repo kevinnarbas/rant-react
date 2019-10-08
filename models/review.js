@@ -3,12 +3,12 @@ const Schema = mongoose.Schema
 
 const reviewSchema = new Schema({
   review: {type: String},
-  wait_time: {type: Number},
-  waitService: {type: Number},
-  foodTaste: {type: Number},
-  instaWorth: {type: Number},
-  cleanliness: {type: Number},
-  bathroom: {type: Number},
+  waitTime: {type: Number, min: 1, max: 5},
+  waitService: {type: Number, min: 1, max: 5},
+  foodTaste: {type: Number, min: 1, max: 5},
+  instaWorth: {type: Number, min: 1, max: 5},
+  cleanliness: {type: Number, min: 1, max: 5},
+  bathroom: {type: Number, min: 1, max: 5},
 }, {timestamps: true})
 
 module.exports = mongoose.model('Review', reviewSchema)

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {Accordion, Card, Button} from 'react-bootstrap'
+import ReviewForm from '../ReviewForm/ReviewForm'
 
 const DetailDetails = (props) => {
   const {location, is_closed, display_phone, price} = props.location
@@ -19,7 +20,7 @@ const DetailDetails = (props) => {
             <div>{display_phone}</div>
             <div>{price}</div>
             <Link to='/'>
-              <Button style={{backgroundColor: '#FF5252'}}>BACK</Button>
+              <Button style={{backgroundColor: '#FF5252', borderColor: '#FF5252'}}>BACK</Button>
             </Link>
           </Card.Body>
         </Accordion.Collapse>
@@ -40,7 +41,7 @@ const DetailDetails = (props) => {
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="2">
           <Card.Body>
-            Form here
+            <ReviewForm />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
