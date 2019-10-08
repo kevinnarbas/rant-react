@@ -41,7 +41,7 @@ const DetailDetails = (props) => {
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="2">
           <Card.Body>
-            <ReviewForm />
+            <ReviewForm id={props.location.id}/>
           </Card.Body>
         </Accordion.Collapse>
       </Card>

@@ -22,4 +22,3 @@ function create(review) {
   };
   return fetch(BASE_URL, options).then(res => res.json());
 }
-
