@@ -16,5 +16,6 @@ function create(req, res) {
 
 async function reviews(req, res) {
   const reviews = await Review.find({})
-  console.log(reviews)
+  res.json(reviews)
+  // console.log(reviews)
 }

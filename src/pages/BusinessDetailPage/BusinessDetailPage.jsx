@@ -6,13 +6,57 @@ import reviewService from '../../utils/reviewService'
 
 class BusinessDetailPage extends React.Component {
   state = {
-    reviews: []
+    reviews: [],
+    waitTime: 0,
+    waitService: 0,
+    foodTaste: 0,
+    instaWorth: 0,
+    cleanliness: 0,
+    bathroom: 0,
   }
 
-  componentDidMount() {
-    const reviews = reviewService.index()
-    this.setState({reviews})
-    console.log(reviews)
+  async componentDidMount() {
+    const {id} = this.props.match.params
+    let allReviews = await reviewService.index()
+    let thisReview = await allReviews.filter(review => review.restId === id)
+    await this.setState({reviews: thisReview})
+    // console.log(thisReview)
+    // this.getRating()
+    this.getOverallRatings()
+  }
+
+  getMean = (total, length, category) => {
+    // console.log(category)
+    let mean = total / length
+    this.setState({waitTime: mean})
+    // this.setState({`${category}`: mean})
+  }
+
+  getRating = async (category) => {
+    let nums = []
+    let total = 0
+    
+    console.log('here', category)
+    await this.state.reviews.forEach(review => {
+      nums.push(review[category])
+    })
+    await nums.forEach(num => {
+      if (num === null) nums.pop()
+    })
+    await nums.forEach(num => {
+      total += num
+      console.log(total)
+    })
+    await this.getMean(total, nums.length, category)
+  }
+
+  async getOverallRatings() {
+    await this.getRating('waitTime')
+    await this.getRating('waitService')
+    await this.getRating('foodTaste')
+    await this.getRating('instaWorth')
+    await this.getRating('cleanliness')
+    await this.getRating('bathroom')
   }
 
   render() {
@@ -23,14 +67,14 @@ class BusinessDetailPage extends React.Component {
         <hr />
         <Container>
           <Row>
-            <Col xs={4}><h5>Wait time:</h5> Overall Rating</Col>
-            <Col xs={4}><h5>Wait Service:</h5> Overall Rating</Col>
-            <Col xs={4}><h5>Food Taste:</h5> Overall Rating</Col>
+            <Col xs={4}><h5>Wait time:</h5><h3>{this.state.waitTime}</h3></Col>
+            <Col xs={4}><h5>Wait Service:</h5><h3>{this.state.waitService}</h3></Col>
+            <Col xs={4}><h5>Food Taste:</h5><h3>{this.state.foodTaste}</h3></Col>
           </Row>
           <Row>
-            <Col xs={4}><h5>Instagraminess:</h5> Overall Rating</Col>
-            <Col xs={4}><h5>Cleanliness:</h5> Overall Rating</Col>
-            <Col xs={4}><h5>Bathrooms:</h5> Overall Rating</Col>
+            <Col xs={4}><h5>Gram Worth:</h5><h3>{this.state.instaWorth}</h3></Col>
+            <Col xs={4}><h5>Cleanliness:</h5><h3>{this.state.cleanliness}</h3></Col>
+            <Col xs={4}><h5>Bathrooms:</h5><h3>{this.state.bathroom}</h3></Col>
           </Row>
           <hr />
           <Row>
@@ -42,7 +86,18 @@ class BusinessDetailPage extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col>{}</Col>
+            <Col>{this.state.reviews.map((review, id) => 
+              <div className="Detail-review">
+                <div>Wait Time: {review.waitTime || 'No Comment'}</div>
+                <div>Wait Service: {review.waitService || 'No Comment'}</div>
+                <div>Food Taste: {review.foodTaste || 'No Comment'}</div>
+                <div>Gram Worth: {review.instaWorth || 'No Comment'}</div>
+                <div>Cleanliness: {review.cleanliness || 'No Comment'}</div>
+                <div>Bathroom: {review.bathroom || 'No Comment'}</div>
+                <div>Review: {review.review || 'No Comment'}</div>
+                {/* <div>Created At: {review.createdAt.toLocaleDateString()}</div> */}
+              </div>
+            )}</Col>
           </Row>
         </Container>
       </>

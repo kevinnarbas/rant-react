@@ -37,7 +37,6 @@ class SearchList extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.componentDidMount()
-    console.log(this.state.reviews)
   }
 
 
