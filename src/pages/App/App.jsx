@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-import Container from 'react-bootstrap/Container'
+// import Container from 'react-bootstrap/Container'
 import NavBar from '../../components/NavBar/NavBar'
 import userService from '../../utils/userService'
 import LoginPage from '../LoginPage/LoginPage'
@@ -26,6 +26,8 @@ class App extends Component {
   }
 
   render() {
+    // const user = this.state.user ? <MainPage user={this.state.user} /> : <MainPage />
+
     return (
       <div className="App">
         <header>
@@ -34,12 +36,10 @@ class App extends Component {
             handleLogout={this.handleLogout}
           />
         </header>
-        <Container>
+        <div>
           <Switch>
             <Route exact path='/' render={() => 
-              <MainPage 
-                user={this.state.user}
-              />
+              <MainPage user={this.state.user} />
             } />
             <Route path='/signup' render={({history}) => 
               <SignupPage 
@@ -60,7 +60,7 @@ class App extends Component {
               <AboutPage />
             } />
           </Switch>
-        </Container>
+        </div>
         <footer className="App-footer">Rant made by Kevinn Arbas with ♥︎ Remember to ♻︎ always</footer>
       </div>
     );

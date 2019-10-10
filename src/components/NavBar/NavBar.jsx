@@ -27,17 +27,15 @@ const NavBar = (props) => {
   return(
     <div>
       <Navbar inverse fluid className="NavBar" expand="xl">
-        <Navbar.Brand style={linkItem}>&nbsp;&nbsp;&nbsp;RANT&nbsp;&nbsp;&nbsp;</Navbar.Brand>
-        <Navbar.Collapse>
-          <Nav>
-            <Nav.Link><Link to="/" style={linkItem}>Home</Link></Nav.Link>
-            <Nav.Link><Link to="/about" style={linkItem}>About</Link></Nav.Link>
-          </Nav>
-          <Nav className="ml-auto">
-            {name}
-            {nav}
-          </Nav>
-        </Navbar.Collapse>
+        <Nav>
+          <h3 className="text-white">RANT&nbsp;</h3>
+          <Nav.Link><Link to="/" style={linkItem}>Home</Link></Nav.Link>
+          <Nav.Link><Link to="/about" style={linkItem}>About</Link></Nav.Link>
+        </Nav>
+        <Nav>
+          {name}
+          {nav}
+        </Nav>
       </Navbar>
     </div>
   )

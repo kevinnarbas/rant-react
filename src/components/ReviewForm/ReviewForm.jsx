@@ -1,5 +1,6 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import reviewService from '../../utils/reviewService'
 
 class ReviewForm extends React.Component {
@@ -36,8 +37,8 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    return (
-      <form onSubmit={this.handleReviewSubmit}>
+    const user = this.props.user ? 
+      <>
         <label>Wait Time: </label>
         <select name="waitTime" id="" onChange={this.handleChange} value={this.state.waitTime}>
           <option value="">No response</option>
@@ -123,6 +124,16 @@ class ReviewForm extends React.Component {
           value={this.state.review}
         />
         <Button type="submit" style={{backgroundColor: '#FF5252', borderColor: '#FF5252'}}>SUBMIT</Button>
+      </>
+      :
+      <>
+        <p><Link style={{color: '#FF5252'}} to='/signup'>SIGN UP</Link> To use this feature!</p>
+        <p>Or <Link style={{color: '#FF5252'}} to='/login'>LOG IN</Link> to use this feature!</p>
+      </>
+
+      return (
+      <form onSubmit={this.handleReviewSubmit}>
+        {user}
       </form>
     )
   }
