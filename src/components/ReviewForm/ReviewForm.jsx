@@ -4,6 +4,7 @@ import reviewService from '../../utils/reviewService'
 
 class ReviewForm extends React.Component {
   state = {
+    user: this.props.user,
     restId: this.props.id,
     waitTime: '',
     waitService: '',

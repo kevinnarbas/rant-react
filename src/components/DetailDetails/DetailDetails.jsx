@@ -4,7 +4,8 @@ import {Accordion, Card, Button} from 'react-bootstrap'
 import ReviewForm from '../ReviewForm/ReviewForm'
 
 const DetailDetails = (props) => {
-  const {location, is_closed, display_phone, price} = props.location
+  const {user} = props
+  const {location, is_closed, display_phone, price, id} = props.location
   const [line1, line2] = location.display_address
   return (
     <Accordion defaultActiveKey="0">
@@ -41,7 +42,7 @@ const DetailDetails = (props) => {
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="2">
           <Card.Body>
-            <ReviewForm id={props.location.id}/>
+            <ReviewForm id={id} user={user}/>
           </Card.Body>
         </Accordion.Collapse>
       </Card>

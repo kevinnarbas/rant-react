@@ -2,13 +2,15 @@ import React from 'react'
 import SearchList from '../../components/SearchList/SearchList'
 import {Container, Row, Col} from 'react-bootstrap'
 
-const MainPage = () => (
+const MainPage = (props) => (
   <>
     <h1>RANT</h1>
     <Container>
       <Row>
         <Col>
-          <SearchList />
+          <SearchList 
+            user={props.user}
+          />
         </Col>
       </Row>
     </Container>

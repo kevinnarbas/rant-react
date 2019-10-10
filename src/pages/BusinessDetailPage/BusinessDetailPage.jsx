@@ -56,7 +56,9 @@ class BusinessDetailPage extends React.Component {
   }
 
   render() {
-    const {name, image_url} = this.props.location.state.businesses
+    const {businesses} = this.props.location.state
+    const {name, image_url} = businesses
+    const {_id} = this.props.location.state.user._id
     return (
       <>
         <h1>{name}</h1>
@@ -78,7 +80,10 @@ class BusinessDetailPage extends React.Component {
               <img className="Detail-img" src={image_url} alt="restauraunt-type"/>
             </Col>
             <Col sx={6}>
-              <DetailDetails location={this.props.location.state.businesses} />
+              <DetailDetails 
+                location={businesses} 
+                user={_id}
+              />
             </Col>
           </Row>
           <Row>

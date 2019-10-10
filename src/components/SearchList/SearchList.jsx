@@ -48,7 +48,7 @@ class SearchList extends React.Component {
       <>
         <Form onSubmit={this.handleSubmit}>
           <Row>
-            <Col>
+            <Col style={{display: 'flex'}}>
               <Form.Control 
                 type="text" 
                 value={this.state.search} 
@@ -56,9 +56,7 @@ class SearchList extends React.Component {
                 onChange={this.handleChange} 
                 placeholder="Search Here:"
               />
-            </Col>
-            <Col>
-              <Button type="submit">Search</Button>
+              <Button style={{backgroundColor: '#FF5252', borderColor: '#FF5252'}} type="submit">SEARCH</Button>
             </Col>
           </Row>
         </Form>
@@ -70,7 +68,7 @@ class SearchList extends React.Component {
                 <Link
                   to={{
                     pathname:`business/${business.id}`,
-                    state: {businesses: business}
+                    state: {businesses: business, user: this.props.user},
                   }}
                   key={id}
                 >

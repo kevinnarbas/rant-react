@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
 import userService from '../../utils/userService'
-// import LoginToast from '../../components/LoginToast/LoginToast'
 import {Toast} from 'react-bootstrap'
 
 class LoginPage extends Component {
@@ -39,7 +38,7 @@ class LoginPage extends Component {
 
     return (
       <div className="LoginPage">
-        <header className="header-footer">Log In</header>
+        <h1>Log In!</h1>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">
             <div className="col-sm-12">
