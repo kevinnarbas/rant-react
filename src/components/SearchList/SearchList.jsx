@@ -1,6 +1,9 @@
 import React from 'react'
 import Axios from "axios"
+import './SearchList.css'
 import {Route, Switch, Link} from 'react-router-dom'
+import SearchCard from '../SearchCard/SearchCard'
+import {Card, CardColumns, Form, Row, Button, Col} from 'react-bootstrap'
 
 
 class SearchList extends React.Component {
@@ -43,13 +46,26 @@ class SearchList extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.search} name="search" onChange={this.handleChange}/>
-          <button type="submit">Search</button>
-        </form>
+        <Form onSubmit={this.handleSubmit}>
+          <Row>
+            <Col>
+              <Form.Control 
+                type="text" 
+                value={this.state.search} 
+                name="search" 
+                onChange={this.handleChange} 
+                placeholder="Search Here:"
+              />
+            </Col>
+            <Col>
+              <Button type="submit">Search</Button>
+            </Col>
+          </Row>
+        </Form>
+        <br/>
         <Switch>
           <Route exact path="/" render={() => 
-            <div>
+            <CardColumns>
               {this.state.businesses.map((business, id) => 
                 <Link
                   to={{
@@ -58,10 +74,12 @@ class SearchList extends React.Component {
                   }}
                   key={id}
                 >
-                  <div key={id}>{business.name}</div>
+                  <Card style={{ width: '20rem'}}>
+                    <SearchCard business={business}/>
+                  </Card>
                 </Link>
                 )}
-            </div>
+            </CardColumns>
           } />
         </Switch>
       </>

@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
 import userService from '../../utils/userService'
+// import LoginToast from '../../components/LoginToast/LoginToast'
+import {Toast} from 'react-bootstrap'
 
 class LoginPage extends Component {
   
   state = {
     email: '',
-    pw: ''
+    pw: '',
+    show: false,
+    setShow: false,
   };
 
   handleChange = (e) => {
@@ -23,11 +27,16 @@ class LoginPage extends Component {
       this.props.handleSignupOrLogin();
       this.props.history.push('/');
     } catch (err) {
-      alert('USE A TOAST!');
+      this.handleToast(true)
     }
+  }
+  
+  handleToast = (val) => {
+    this.setState({show: val, setShow: val})
   }
 
   render() {
+
     return (
       <div className="LoginPage">
         <header className="header-footer">Log In</header>
@@ -49,6 +58,13 @@ class LoginPage extends Component {
             </div>
           </div>
         </form>
+        <Toast onClose={() => this.handleToast(false)} show={this.state.show} delay={2000} autohide>
+          <Toast.Header>
+            <strong>Hey Buddy&nbsp;&nbsp;&nbsp;</strong>
+            <small>&nbsp;&nbsp;&nbsp;</small>
+          </Toast.Header>
+          <Toast.Body>&nbsp;&nbsp;&nbsp;Wrong Login Info&nbsp;&nbsp;&nbsp;</Toast.Body>
+        </Toast>
       </div>
     );
   }

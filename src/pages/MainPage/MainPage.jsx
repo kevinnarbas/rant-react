@@ -7,7 +7,7 @@ const MainPage = () => (
     <h1>RANT</h1>
     <Container>
       <Row>
-        <Col xs={12} lg={8}>
+        <Col>
           <SearchList />
         </Col>
       </Row>
