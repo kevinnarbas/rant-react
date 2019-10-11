@@ -28,7 +28,7 @@ const NavBar = (props) => {
     <div>
       <Navbar inverse fluid className="NavBar" expand="xl">
         <Nav>
-          <h3 className="text-white">RANT&nbsp;</h3>
+          <h3 className="text-white"><i class="fas fa-theater-masks"></i> RANT&nbsp;</h3>
           <Nav.Link><Link to="/" style={linkItem}>Home</Link></Nav.Link>
           <Nav.Link><Link to="/about" style={linkItem}>About</Link></Nav.Link>
         </Nav>

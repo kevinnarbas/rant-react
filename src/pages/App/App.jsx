@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-// import Container from 'react-bootstrap/Container'
 import NavBar from '../../components/NavBar/NavBar'
 import userService from '../../utils/userService'
 import LoginPage from '../LoginPage/LoginPage'

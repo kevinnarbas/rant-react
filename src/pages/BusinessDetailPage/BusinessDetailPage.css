@@ -4,4 +4,16 @@
 
 .Detail-review {
   display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid lightgrey;
+}
+
+.Detail-cats {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.Detail-num {
+  color: var(--accent-color)
 }

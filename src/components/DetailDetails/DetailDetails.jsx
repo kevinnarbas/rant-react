@@ -7,9 +7,9 @@ const DetailDetails = (props) => {
   const {location, is_closed, display_phone, price, id} = props.location
   const [line1, line2] = location.display_address
   const user = props.user ? 
-    <ReviewForm id={id} user={props.user}/>
+    <ReviewForm id={id} user={props.user} handleFormSubmit={props.handleFormSubmit}/>
     :
-    <ReviewForm id={id}/>
+    <ReviewForm id={id} handleFormSubmit={props.handleFormSubmit}/>
 
   return (
     <Accordion defaultActiveKey="0">
@@ -36,7 +36,7 @@ const DetailDetails = (props) => {
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="1">
           <Card.Body>
-            ICE BOX
+            ICE BOX <i>Brrrrr</i>
           </Card.Body>
         </Accordion.Collapse>
       </Card>
