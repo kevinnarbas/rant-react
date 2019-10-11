@@ -3,5 +3,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+}
+
+.NavBar-brand {
+  font-family: 'Chewy', cursive;
+  color: white;
 }
