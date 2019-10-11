@@ -29,16 +29,50 @@ That is where **RANT** comes to the rescue! With RANT you get more then just one
 
 ### See my trello board [**here**](https://trello.com/b/kc8TpBdV)
 
-### Deployed on heroku [**here**](google.com)
+### Deployed on heroku [**here**](https://rant-react.herokuapp.com/)
+
+---
+
+![Imgur](https://i.imgur.com/ecSPzyX.png)
+<br>
+Here is the main landing page.
+
+![Imgur](https://i.imgur.com/vNj2D7a.png)
+![Imgur](https://i.imgur.com/RKin11m.png) 
+<br>
+Here is the NavBar elements being dynamic to when a user is logged in or not
+
+![Imgur](https://i.imgur.com/9BBvQpe.png) 
+<br>
+Added some tool tips cause this could be seen as another nav element
+
+![Imgur](https://i.imgur.com/oDePZ4C.png)
+![Imgur](https://i.imgur.com/AEFvzMr.png)
+![Imgur](https://i.imgur.com/Kl4VzVo.png)
+<br>
+Here is the deail page for a business.<br>
+It has:
+  - Info on the business
+  - A form for submitting a review
+  - The reviews
+
+![Imgur](https://i.imgur.com/R4qo4GV.png)
+It has authorization on this page as well with the form not rendering if there is no user signed in
 
 ---
 
 ## Paltry Persistent Predicaments!!!
 
-- Heres one
+- React-Bootstrap stuff. I just need to mess with it more to get used to it.
+-
 
 ---
 
 ## Fun Future Feature!!!
 
-- Is this possible?
+- Refactor the detail page to Fetch by business so that it can get even more information to play with. Now its just taking the info passed from the initial API call
+- Redo the SearchCards to maybe display more info once the refactor happens so I can display different data between the two
+- Add a map feature with dynamic location information. (hardcoded to SF ATM)
+- Add multiple query types for separate API hits. (currently just one type )
+- Add a user profile page where they can update/delete their own RANTS
+- User photo upload and display on page alongside the cover photo

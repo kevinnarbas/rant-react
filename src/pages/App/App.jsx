@@ -60,7 +60,10 @@ class App extends Component {
             } />
           </Switch>
         </div>
-        <footer className="App-footer">Rant made by Kevinn Arbas with ♥︎ Remember to ♻︎ always</footer>
+        <footer className="App-footer">
+          <p>Rant made by Kevinn Arbas with ♥︎ Remember to ♻︎ always</p>
+          <p>ALL BUSINESS INFORMATION IS FROM <a href="yelp.com" target="blank">YELP!</a></p>
+        </footer>
       </div>
     );
   }
