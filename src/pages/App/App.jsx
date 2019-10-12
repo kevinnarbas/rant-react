@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css';
+import './App.css'
+import {Link} from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import userService from '../../utils/userService'
 import LoginPage from '../LoginPage/LoginPage'
@@ -52,17 +53,18 @@ class App extends Component {
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             } />
-            <Route path="/business/:id" render={(props) => 
+            <Route path='/business/:id' render={(props) => 
               <BusinessDetailPage {...props} />
             } />
-            <Route path="/about" render={() =>
+            <Route path='/about' render={() =>
               <AboutPage />
             } />
+            <Route exact path='/yelp' component={() => window.location = 'https://yelp.com'}/>
           </Switch>
         </div>
         <footer className="App-footer">
           <p>Rant made by Kevinn Arbas with ♥︎ Remember to ♻︎ always</p>
-          <p>ALL BUSINESS INFORMATION IS FROM <a href="yelp.com" target="blank">YELP!</a></p>
+          <p>ALL BUSINESS INFORMATION IS FROM <Link to='/yelp' target='_blank'>YELP!</Link></p>
         </footer>
       </div>
     );

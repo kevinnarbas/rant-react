@@ -124,19 +124,19 @@ class BusinessDetailPage extends React.Component {
                     <Media.Body className="Detail-review">
                       <div className="Detail-cats">
                         <h6><i class="far fa-clock"></i> :</h6>&nbsp;
-                          <h5>{review.waitTime || 'No Comment'}&nbsp; |</h5>&nbsp;
-                        <h6><i class="fas fa-user-check"></i> :</h6>&nbsp;<h5>
-                          {review.waitService || 'No Comment'}&nbsp; |</h5>&nbsp;
+                          <h5 className="Detail-num">{review.waitTime || 'No Comment'}&nbsp; </h5><h5>|</h5>&nbsp;
+                        <h6><i class="fas fa-user-check"></i> :</h6>&nbsp;
+                          <h5 className="Detail-num">{review.waitService || 'No Comment'}&nbsp; </h5><h5>|</h5>&nbsp;
                         <h6><i class="fas fa-utensils"></i> :</h6>&nbsp;
-                          <h5>{review.foodTaste || 'No Comment'}</h5>&nbsp;
+                          <h5 className="Detail-num">{review.foodTaste || 'No Comment'}</h5>&nbsp;
                       </div>
                       <div className="Detail-cats">
                         <h6><i class="fas fa-camera-retro"></i> :</h6>&nbsp;
-                          <h5>{review.instaWorth || 'No Comment'}&nbsp; |</h5>&nbsp;
+                          <h5 className="Detail-num">{review.instaWorth || 'No Comment'}&nbsp; </h5><h5>|</h5>&nbsp;
                         <h6><i class="fas fa-broom"></i> :</h6>&nbsp;
-                          <h5>{review.cleanliness || 'No Comment'}&nbsp; |</h5>&nbsp;
+                          <h5 className="Detail-num">{review.cleanliness || 'No Comment'}&nbsp; </h5><h5>|</h5>&nbsp;
                         <h6><i class="fas fa-restroom"></i> :</h6>&nbsp;
-                          <h5>{review.bathroom || 'No Comment'}</h5>&nbsp;
+                          <h5 className="Detail-num">{review.bathroom || 'No Comment'}</h5>&nbsp;
                       </div>
                       <p>
                         {review.review || 'Declined to write review'}
