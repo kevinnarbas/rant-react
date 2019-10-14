@@ -116,7 +116,7 @@ class BusinessDetailPage extends React.Component {
           </Row>
           <hr/>
           <Row>
-            <h4>REVIEWS:</h4>
+            <h4>OTHER RANTS:</h4>
             <ul className="list-unstyled" style={{display: 'flex', flexWrap: 'wrap'}}>
               {this.state.reviews.reverse().map((review, id) =>
                 <Col xs={6}>

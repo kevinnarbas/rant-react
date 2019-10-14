@@ -26,7 +26,6 @@ class App extends Component {
   }
 
   render() {
-    // const user = this.state.user ? <MainPage user={this.state.user} /> : <MainPage />
 
     return (
       <div className="App">
