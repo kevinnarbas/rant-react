@@ -33,7 +33,7 @@ const NavBar = (props) => {
     <div>
       <Navbar inverse fluid className="NavBar" expand="xl">
         <Nav>
-          <OverlayTrigger placement='bottom' overlay={<Tooltip>Not A Buttom</Tooltip>}>
+          <OverlayTrigger placement='bottom' overlay={<Tooltip>Not A Button</Tooltip>}>
             <h3 className="NavBar-brand"><i class="fas fa-theater-masks"></i> RANT&nbsp;</h3>
           </OverlayTrigger>
           <OverlayTrigger placement='bottom' overlay={<Tooltip>Home Page</Tooltip>}>
